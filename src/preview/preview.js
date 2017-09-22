@@ -1,23 +1,9 @@
 import './preview.scss';
 import React, {Component} from 'react';
-import {Intro} from './components/index';
+import Intro from './intro/intro';
 
 
-class Preview extends Component {
-
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-
-    return (
-      <div className="preview-page">
-        <Intro {...this.props.intro} />
-      </div>
-    );
-  }
-
-}
-
-export default Preview;
+export default () =>
+<div className="preview-page">
+  <Intro />
+</div>
