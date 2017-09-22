@@ -1,21 +1,12 @@
 import './editor.scss';
-import React, {Component} from 'react';
+import React from 'react';
+import Intro from './intro/intro';
 
 
-class Editor extends Component {
-
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    return (
-      <div className="editor">
-        editor view
-      </div>
-    );
-  }
-
-}
-
-export default Editor;
+export default () => {
+  return (
+    <div className="editor-view">
+      <Intro />
+    </div>
+  );
+};

@@ -1,7 +1,13 @@
 import './index.scss';
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
-import {Tabs, Tab} from './components/tabs/index';
+import {Provider} from 'react-redux'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
+
+import store from './store';
+import {Tabs, Tab} from 'material-ui/Tabs';
 import Editor from './editor/editor';
 import Preview from './preview/preview';
 
@@ -11,25 +17,13 @@ class App extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      intro: {
-        firstName: '',
-        lastName: '',
-        headLine: '',
-        summary: ''
-      },
-      contact: {
-        address: '',
-        skype: '',
-        linkedIn: '',
-        phone: '',
-        email: ''
-      },
-      languages: [],
-      experience: [],
-      education: [],
-      skills: []
-    };
+    this.state = {};
+
+    this.onInfoChange = this.onInfoChange.bind(this);
+  }
+
+  onInfoChange(info) {
+    this.setState({info});
   }
 
   render() {
@@ -37,10 +31,10 @@ class App extends Component {
       <div className="app-container">
         <Tabs>
           <Tab label="preview">
-            <Preview />
+            <Preview/>
           </Tab>
           <Tab label="editor">
-            <Editor />
+            <Editor/>
           </Tab>
         </Tabs>
       </div>
@@ -50,4 +44,11 @@ class App extends Component {
 }
 
 
-ReactDOM.render(<App />, document.querySelector('#app-root'));
+ReactDOM.render(
+  <Provider store={store}>
+    <MuiThemeProvider>
+      <App />
+    </MuiThemeProvider>
+  </Provider>,
+  document.querySelector('#app-root')
+);

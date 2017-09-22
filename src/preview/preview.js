@@ -1,5 +1,6 @@
 import './preview.scss';
 import React, {Component} from 'react';
+import {Intro} from './components/index';
 
 
 class Preview extends Component {
@@ -9,9 +10,10 @@ class Preview extends Component {
   }
 
   render() {
+
     return (
-      <div className="preview">
-        preview view
+      <div className="preview-page">
+        <Intro {...this.props.intro} />
       </div>
     );
   }
