@@ -12,7 +12,23 @@ class App extends Component {
     super(props);
 
     this.state = {
-
+      intro: {
+        firstName: '',
+        lastName: '',
+        headLine: '',
+        summary: ''
+      },
+      contact: {
+        address: '',
+        skype: '',
+        linkedIn: '',
+        phone: '',
+        email: ''
+      },
+      languages: [],
+      experience: [],
+      education: [],
+      skills: []
     };
   }
 
