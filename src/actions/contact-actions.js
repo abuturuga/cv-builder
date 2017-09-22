@@ -1,5 +1,5 @@
 export const SET_CONTACT = 'SET_CONTACT';
 
-export const setIntro = payload => {
+export const setContact = payload => {
   return {type: SET_CONTACT, payload};
 };
