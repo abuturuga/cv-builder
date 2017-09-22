@@ -34,10 +34,12 @@ class Tabs extends Component {
 
   renderLabels() {
     const items = this.state.labels.map((item, index) => {
+      const active = index === this.state.active;
+
       return (
         <li key={index}
           onClick={this.changeTab.bind(this, index)}
-          className="label-list-item">
+          className={`label-list-item ${active ? 'active' : ''}`}>
           {item.label}
         </li>
       );
@@ -57,7 +59,7 @@ class Tabs extends Component {
 
   render() {
     return (
-      <div className="tab-component">
+      <div className="tabs-component">
         {this.renderLabels()}
         {this.renderActiveTab()}
       </div>
