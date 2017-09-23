@@ -7,7 +7,8 @@ import Subheader from 'material-ui/Subheader';
 import FloatingActionButton from 'material-ui/FloatingActionButton';
 import ContentAdd from 'material-ui/svg-icons/content/add';
 import ExperienceBox from './experience-box/experience-box';
-import {addExperience} from '../../actions/experience-actions';
+import {addExperience, editExperience} from '../../actions/experience-actions';
+import {generateId} from '../../utils';
 
 
 class Experience extends Component {
@@ -15,17 +16,29 @@ class Experience extends Component {
   constructor(props) {
     super(props);
     this.addExperience = this.addExperience.bind(this);
+    this.onInputBoxChange = this.onInputBoxChange.bind(this);
   }
 
   addExperience() {
-    this.props.dispatch(addExperience())
+    this.props.dispatch(addExperience({id: generateId()}))
+  }
+
+  onInputBoxChange(id, field) {
+    this.props.dispatch(editExperience({id, field}));
   }
 
   render() {
-    console.log(this.props.experience);
     return (
       <div className="editor-experience-container">
-        <FloatingActionButton onClick={this.addEducation}>
+        <div className="experience-boxes-container">
+          {this.props.experience.map(item =>
+            <ExperienceBox key={item.id}
+              onChange={this.onInputBoxChange}
+              {...item}/>
+          )}
+        </div>
+
+        <FloatingActionButton onClick={this.addExperience}>
           <ContentAdd />
         </FloatingActionButton>
       </div>

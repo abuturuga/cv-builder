@@ -12,12 +12,26 @@ export default (state = [], action) => {
 
   switch (action.type) {
     case ADD_EXPERIENCE:
-      console.log('ADD_EXPERIENCE', state);
-      return [...state, {}];
-    case EDIT_EXPERIENCE:
-      return state;
-    case REMOVE_EXPERIENCE:
-      return state;
+      return [...state, action.payload];
+    case EDIT_EXPERIENCE: {
+      const index = state.findIndex(item => item.id === action.payload.id);
+      if(index === -1) return state;
+
+      return state.map((item, i) => {
+        if(i === index) return Object.assign({}, item, action.payload.field);
+
+        return item;
+      });
+    }
+    case REMOVE_EXPERIENCE: {
+      const index = state.findIndex(item => item.id === action.payload.id);
+      if(index === -1) return state;
+
+      return [
+        ...state.slice(0, index),
+        ...state.slice(index + 1)
+      ]
+    }
     default:
       return state;
   }
