@@ -24,7 +24,7 @@ class Contact extends Component {
   }
 
   render() {
-    const {address, phone, skype, email, linkedIn} = this.props;
+    const {address, phone, skype, email, linkedIn} = this.props.contact;
 
     return (
       <Paper>
@@ -71,6 +71,6 @@ class Contact extends Component {
 }
 
 
-const mapStateToProps = ({contact}) => contact;
+const mapStateToProps = ({contact}) => ({contact});
 Contact = connect(mapStateToProps)(Contact);
 export default Contact;

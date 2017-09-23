@@ -24,7 +24,7 @@ class Intro extends Component {
   }
 
   render() {
-    const {firstName, lastName, headLine, summary} = this.props;
+    const {firstName, lastName, headLine, summary} = this.props.intro;
 
     return (
       <Paper>
@@ -66,6 +66,6 @@ class Intro extends Component {
 }
 
 
-const mapStateToProps = ({intro}) => intro;
+const mapStateToProps = ({intro}) => ({intro});
 Intro = connect(mapStateToProps)(Intro);
 export default Intro;

@@ -68,8 +68,6 @@ class Skills extends Component {
 
 }
 
-const mapStateToProps = state => {
-  return state;
-};
+const mapStateToProps = ({skills}) => ({skills});
 Skills = connect(mapStateToProps)(Skills);
 export default Skills;
