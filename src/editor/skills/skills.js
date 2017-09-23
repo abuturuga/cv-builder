@@ -39,8 +39,6 @@ class Skills extends Component {
   render() {
     return  (
       <Paper>
-        <Subheader>Skills</Subheader>
-
         <div className="paper-content">
           <TextField
             floatingLabelText="First Name"

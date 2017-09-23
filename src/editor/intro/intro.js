@@ -28,7 +28,6 @@ class Intro extends Component {
 
     return (
       <Paper>
-        <Subheader>Intro</Subheader>
         <div className="paper-content">
           <TextField
             floatingLabelText="First Name"

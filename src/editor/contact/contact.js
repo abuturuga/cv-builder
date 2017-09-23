@@ -28,8 +28,6 @@ class Contact extends Component {
 
     return (
       <Paper>
-        <Subheader>Contact</Subheader>
-
         <div className="paper-content">
           <TextField
             floatingLabelText="Address"
