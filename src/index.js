@@ -5,7 +5,6 @@ import {Provider} from 'react-redux'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
-
 import store from './store';
 import {Tabs, Tab} from 'material-ui/Tabs';
 import Editor from './editor/editor';

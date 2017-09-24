@@ -9,9 +9,13 @@ function Intro({firstName, lastName, headLine, summary}) {
         <h1 className="info-name">{firstName} &nbsp; {lastName}</h1>
         <p className="info-headline">{headLine}</p>
       </div>
-      <div className="info-summary">
-        <h1 className="section-title">About me</h1>
-        <p className="section-text">{summary}</p>
+
+      <div className="preview-section">
+        <h1 className="preview-section-title">About me</h1>
+
+        <div className="preview-section-content">
+          <p className="section-text">{summary}</p>
+        </div>
       </div>
     </div>
   );
