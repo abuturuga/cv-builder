@@ -3,9 +3,11 @@ import React, {Component} from 'react';
 import Intro from './intro/intro';
 import Contact from './contact/contact';
 import Skills from './skills/skills';
+import Experience from './experience/experience';
+import Education from './education/education';
 
 
-const views = [<Contact />, <Skills />, ,];
+const views = [<Contact />, <Skills />, <Experience />, <Education />];
 const sections = [
   'Contact', 'Skills', 'Experience', 'Education'
 ].map((section, index) => {

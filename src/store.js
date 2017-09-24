@@ -20,11 +20,23 @@ const fakeData = {
   skills: ['JavaScript', 'React.Js', 'HTML', 'CSS', 'HTML5', 'Angular.js '],
   experience: [
     {
+      id: 1,
       firm: loremIpsun(1),
       position: 'Front End Developer',
       address: loremIpsun(1),
       start: new Date(),
       end: new Date(),
+      description: loremIpsun(17)
+    }
+  ],
+  education: [
+    {
+      id: 0,
+      school: loremIpsun(1),
+      degree: loremIpsun(1),
+      field: loremIpsun(1),
+      start: 2012,
+      end: 2014,
       description: loremIpsun(17)
     }
   ]
