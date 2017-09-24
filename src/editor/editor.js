@@ -3,13 +3,13 @@ import React, {Component} from 'react';
 import {
   Step,
   Stepper,
-  StepButton,
-  StepContent,
+  StepButton
 } from 'material-ui/Stepper';
 import Intro from './intro/intro';
 import Contact from './contact/contact';
 import Skills from './skills/skills';
 import Experience from './experience/experience';
+import Education from './education/education';
 
 
 class Editor extends Component {
@@ -48,7 +48,14 @@ class Editor extends Component {
 
   renderActiveView() {
     const {stepIndex} = this.state;
-    return [<Intro />, <Contact/>, <Skills />, <Experience/>][stepIndex];
+
+    return [
+      <Intro />,
+      <Contact/>,
+      <Skills />,
+      <Experience/>,
+      <Education />
+    ][stepIndex];
   }
 
   render() {
