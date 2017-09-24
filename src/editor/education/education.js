@@ -35,10 +35,12 @@ class Education extends Component {
               {...item}/>
           )}
         </div>
-
-        <FloatingActionButton onClick={this.addEducation}>
-          <ContentAdd />
-        </FloatingActionButton>
+        
+        <div className="floating-button-container">
+          <FloatingActionButton onClick={this.addEducation}>
+            <ContentAdd />
+          </FloatingActionButton>
+        </div>
       </div>
     );
   }

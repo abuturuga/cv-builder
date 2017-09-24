@@ -1,10 +1,6 @@
 import './editor.scss';
 import React, {Component} from 'react';
-import {
-  Step,
-  Stepper,
-  StepButton
-} from 'material-ui/Stepper';
+import Stepper from './stepper/stepper';
 import Intro from './intro/intro';
 import Contact from './contact/contact';
 import Skills from './skills/skills';
@@ -22,30 +18,6 @@ class Editor extends Component {
     };
   }
 
-  renderStepper() {
-    const {stepIndex} = this.state;
-
-    return (
-      <Stepper linear={false} activeStep={stepIndex}>
-        <Step>
-          <StepButton onClick={() => this.setState({stepIndex: 0})}>Intro</StepButton>
-        </Step>
-        <Step>
-          <StepButton onClick={() => this.setState({stepIndex: 1})}>Contact</StepButton>
-        </Step>
-        <Step>
-          <StepButton onClick={() => this.setState({stepIndex: 2})}>Skills</StepButton>
-        </Step>
-        <Step>
-          <StepButton onClick={() => this.setState({stepIndex: 3})}>Experience</StepButton>
-        </Step>
-        <Step>
-          <StepButton onClick={() => this.setState({stepIndex: 4})}>Education</StepButton>
-        </Step>
-      </Stepper>
-    );
-  }
-
   renderActiveView() {
     const {stepIndex} = this.state;
 
@@ -61,9 +33,9 @@ class Editor extends Component {
   render() {
     return (
       <div className="editor-view">
-        <div className="stepper-container">
-          {this.renderStepper()}
-        </div>
+        <Stepper stepIndex={this.state.stepIndex}
+          onStepChange={stepIndex => this.setState({stepIndex})}/>
+
         <div className="stepper-view">
           {this.renderActiveView()}
         </div>

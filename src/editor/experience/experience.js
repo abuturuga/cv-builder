@@ -38,9 +38,11 @@ class Experience extends Component {
           )}
         </div>
 
-        <FloatingActionButton onClick={this.addExperience}>
-          <ContentAdd />
-        </FloatingActionButton>
+        <div className="floating-button-container">
+          <FloatingActionButton onClick={this.addExperience}>
+            <ContentAdd />
+          </FloatingActionButton>
+        </div>
       </div>
     );
   }
