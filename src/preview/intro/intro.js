@@ -1,12 +1,15 @@
+import './intro.scss';
 import React from 'react';
 import {connect} from 'react-redux';
 
 
 function Intro({firstName, lastName, headLine, summary}) {
+  const name = `${firstName} ${lastName}`;
+
   return (
     <div className="preview-info">
       <div className="info-header">
-        <h1 className="info-name">{firstName} &nbsp; {lastName}</h1>
+        <h1 className="info-name">{name}</h1>
         <p className="info-headline">{headLine}</p>
       </div>
 
